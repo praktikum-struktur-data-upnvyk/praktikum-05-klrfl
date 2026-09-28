@@ -14,7 +14,8 @@
 // STUDY CASE: APLIKASI EDITOR "TULIS"
 // -----------------------------------------------------------------------------
 // Pertemuan ini hanya punya SATU soal, yaitu study case aplikasi editor Tulis.
-// Ceritanya lengkap ada di src/student.cpp. File ini hanya ringkasan kontraknya.
+// Ceritanya lengkap ada di src/student.cpp. File ini hanya ringkasan
+// kontraknya.
 //
 // Ada EMPAT pekerjaan yang dinilai:
 //
@@ -51,8 +52,8 @@ using std::string;
  *   `next`   catatan DI BAWAHNYA, atau `nullptr` bila dia paling bawah
  */
 struct Node {
-    int   data;
-    Node* next;
+  int data;
+  Node *next;
 };
 
 /**
@@ -71,7 +72,7 @@ struct Node {
  *      nullptr
  */
 struct Stack {
-    Node* top;
+  Node *top;
 };
 
 /**
@@ -87,7 +88,7 @@ struct Stack {
  *     ditolak karena kehabisan tempat. Berapa pun banyaknya data yang masuk,
  *     seluruhnya harus tersimpan.
  */
-bool push(Stack& s, int nilai);
+bool push(Stack &s, int nilai);
 
 /**
  * SOAL 2 — Elemen PALING ATAS dikeluarkan dari stack, dan pemanggil menerima
@@ -105,7 +106,7 @@ bool push(Stack& s, int nilai);
  *   - Bila stack sedang KOSONG (underflow), kembaliannya false, `nilai` tidak
  *     boleh diubah sama sekali, dan stack tetap kosong.
  */
-bool pop(Stack& s, int& nilai);
+bool pop(Stack &s, int &nilai);
 
 /**
  * SOAL 3 — Seluruh isi stack dibuang sehingga stack kembali kosong.
@@ -119,7 +120,7 @@ bool pop(Stack& s, int& nilai);
  *     melakukan apa-apa.
  *   - Stack tetap dapat dipakai seperti biasa sesudahnya.
  */
-void clear(Stack& s);
+void clear(Stack &s);
 
 /**
  * SOAL 4 — Menentukan apakah tanda kurung di dalam sebuah ekspresi berpasangan
@@ -138,7 +139,7 @@ void clear(Stack& s);
  *   - Ekspresi sepanjang apa pun harus dapat diperiksa; tidak ada batas
  *     banyaknya tanda kurung yang boleh bersarang.
  */
-bool kurungSeimbang(const string& ekspresi);
+bool kurungSeimbang(const string &ekspresi);
 
 // =============================================================================
 // SUDAH DISEDIAKAN — TIDAK DINILAI
@@ -150,19 +151,19 @@ bool kurungSeimbang(const string& ekspresi);
 /** Menyiapkan sebuah stack baru menjadi kosong. Dipakai pada variabel yang
  *  belum pernah dipakai, jadi ia hanya menetapkan keadaan kosong dan TIDAK
  *  melepas node apa pun. */
-void inisialisasi(Stack& s);
+void inisialisasi(Stack &s);
 
 /** Apakah stack sedang kosong. Tidak mengubah stack. */
-bool isEmpty(const Stack& s);
+bool isEmpty(const Stack &s);
 
 /** Melihat elemen teratas tanpa mengeluarkannya. Mengisi `nilai` dan
  *  mengembalikan true bila ada; pada stack kosong mengembalikan false tanpa
  *  menyentuh `nilai`. Disediakan sebagai PEMBANDING untuk Soal 2 — bedanya
  *  dengan `pop` cuma satu hal, yaitu `peek` tidak mengeluarkan apa pun. */
-bool peek(Stack& s, int& nilai);
+bool peek(Stack &s, int &nilai);
 
 /** Seluruh isi stack dibaca dari elemen teratas ke elemen terbawah menjadi satu
  *  baris teks, dipisahkan satu spasi. Stack kosong menghasilkan "". */
-string display(Stack& s);
+string display(Stack &s);
 
 #endif // STUDENT_H
